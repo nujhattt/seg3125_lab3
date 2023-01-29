@@ -12,7 +12,7 @@ var products = [
 		price: 1.99
 	},
 	{
-		name: "Organic Brocoli",
+		name: "Brocoli (Organic)",
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
@@ -45,13 +45,77 @@ var products = [
 		price: 10.00
 	},
 	{
-		name: "A weak old Salmon",
+		name: "Salmon (Organic)",
+		vegetarian: false,
+		glutenFree: true,
+		organic: true,
+		cheap: false,
+		price: 15.00
+	},
+	{
+		name: "Banana",
+		vegetarian: true,
+		glutenFree: true,
+		organic: false,
+		cheap: true,
+		price: 0.99
+	},
+	{
+		name: "Milk",
+		vegetarian: true,
+		glutenFree: true,
+		organic: false,
+		cheap: true,
+		price: 2.50
+	},
+	{
+		name: "Almond Milk",
+		vegetarian: true,
+		glutenFree: true,
+		organic: false,
+		cheap: true,
+		price: 3.47
+	},
+	{
+		name: "Mozarella Cheese",
 		vegetarian: false,
 		glutenFree: true,
 		organic: false,
 		cheap: true,
-		price: 5.00
-	}
+		price: 2.50
+	},
+	{
+		name: "Avocado (Organic)",
+		vegetarian: true,
+		glutenFree: true,
+		organic: true,
+		cheap: false,
+		price: 6.47
+	},
+	{
+		name: "Tofu",
+		vegetarian: true,
+		glutenFree: true,
+		organic: false,
+		cheap: true,
+		price: 1.67
+	},
+	{
+		name: "Ground Meat Beef",
+		vegetarian: false,
+		glutenFree: true,
+		organic: false,
+		cheap: true,
+		price: 6.97
+	},
+	{
+		name: "Boneless Skinless Chicken Breast (Organic)",
+		vegetarian: false,
+		glutenFree: true,
+		organic: false,
+		cheap: false,
+		price: 12.00
+	},
 ];
 	
 
@@ -63,22 +127,31 @@ function restrictListProducts(prods, restriction) {
 	let product_names = [];
 	for (let i=0; i<prods.length; i+=1) {
 		if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)){
-			product_names.push(prods[i].name);
+			product_names.push(prods[i].name + ', $' + prods[i].price);
 		}
-		else if ((restriction == "Gluten-Free") && (prods[i].glutenFree == true)){
-			product_names.push(prods[i].name);
+		else if ((restriction == "Gluten-free") && (prods[i].glutenFree == true)){
+			product_names.push(prods[i].name + ', $' + prods[i].price);
 		}
 		else if (restriction == "All"){
-			product_names.push(prods[i].name);
+			product_names.push(prods[i].name + ', $' + prods[i].price);
 		}
 		else if ((restriction == "Cheap") && (prods[i].cheap == true)){
-			products_names.push(prods[i].name);
+			product_names.push(prods[i].name + ', $' + prods[i].price);
 		}
 		else if ((restriction == "Health_Freak") && (prods[i].organic == true)) {
-			products_names.push(prods[i].name);
+			product_names.push(prods[i].name + ', $' + prods[i].price);
 		}
-	
 	}
+		for (let i = 0; i < product_names.length; i++) {
+			for (let j = 0; j < product_names.length - i - 1; j++) {
+			  if (product_names[j].split(', $')[1] > product_names[j + 1].split(', $')[1]) {
+				// swap elements
+				let temp = product_names[j];
+				product_names[j] = product_names[j + 1];
+				product_names[j + 1] = temp;
+			  }
+			}
+		  }
 	return product_names;
 }
 
