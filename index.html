@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+	
 	<link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -21,9 +21,11 @@
 	Choose a Category:
 	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
 	<option value=""></option>
-	<option value="Vegetarian">Vegetarian</option>
-    <option value="GlutenFree">GlutenFree</option>
-    <option value="None">None</option>
+	<option value="Vegetarian">Vegetarian (My diet includes vegetables and non-meat alternatives)</option>
+    <option value="Gluten-free">Gluten-free (My diet does not include gluten and I would like to see other alternatives)</option>
+    <option value ="Cheap">I would like for my groceries to be affordable</option>
+    <option value ="Health_Freak">I would like to see organic products only please! </option>
+    <option value="All">I would like to see all the products please!</option>
 	</select>
 </div>
 
