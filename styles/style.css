@@ -1,5 +1,41 @@
 /* This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp> */
 
+body{ 
+  /* global settings */ 
+  background-color:#00A8CC;/* lightblue */ 
+  font-family:Verdana,Geneva,sans-serif; 
+  word-wrap:break-word; 
+  color:#000839;/* darkerblue */ 
+  text-align:center; 
+  } 
+   
+h1{ 
+  color:#FFA41B; /* orange */ 
+  font-size: 46pt; 
+  } 
+   
+   
+/* Button design is inspired by Professor Barrière's code from Module 1 */ 
+button { 
+  display: block; 
+  margin: 0 auto; /* I want it to be on the center so I put this line instead of width: 100% */ 
+  border: none; 
+  color: inherit; 
+  background-color: #FFA41B;  /* orange */ 
+  padding: 14px 28px; 
+  font-size: 16px; 
+  cursor: pointer; 
+  text-align: center; 
+  transition: 0.2s; 
+  } 
+   
+table { 
+  margin: 0 auto; 
+  } 
+
+
+
+
 /* Style the tab */
 .tab {
   overflow: hidden;
@@ -20,12 +56,12 @@
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-  background-color: #ddd;
+  background-color: #005082;
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-  background-color: #ccc;
+  background-color: #005082;
 }
 
 /* Style the tab content */
