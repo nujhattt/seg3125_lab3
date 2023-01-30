@@ -10,31 +10,11 @@ body{
   } 
    
 h1{ 
-  color:#FFA41B; /* orange */ 
-  font-size: 46pt; 
+  color:#FFA41B;/* orange */ 
+  font-size:46pt; 
   } 
    
-   
-/* Button design is inspired by Professor Barrière's code from Module 1 */ 
-button { 
-  display: block; 
-  margin: 0 auto; /* I want it to be on the center so I put this line instead of width: 100% */ 
-  border: none; 
-  color: inherit; 
-  background-color: #FFA41B;  /* orange */ 
-  padding: 14px 28px; 
-  font-size: 16px; 
-  cursor: pointer; 
-  text-align: center; 
-  transition: 0.2s; 
-  } 
-   
-table { 
-  margin: 0 auto; 
-  } 
-
-
-
+  
 
 /* Style the tab */
 .tab {
