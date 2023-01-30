@@ -35,3 +35,9 @@
   border: 1px solid #ccc;
   border-top: none;
 }
+
+.signature {
+  font-style:italic;
+  position: fixed;
+  bottom: 0;
+}
