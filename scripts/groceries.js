@@ -114,7 +114,7 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		cheap: false,
-		price: 12.00
+		price: 22.00
 	},
 ];
 	
@@ -142,18 +142,21 @@ function restrictListProducts(prods, restriction) {
 			product_names.push(prods[i].name + ', $' + prods[i].price);
 		}
 	}
-		for (let i = 0; i < product_names.length; i++) {
-			for (let j = 0; j < product_names.length - i - 1; j++) {
-			  if (product_names[j].split(', $')[1] > product_names[j + 1].split(', $')[1]) {
-				// swap elements
-				let temp = product_names[j];
-				product_names[j] = product_names[j + 1];
-				product_names[j + 1] = temp;
+	for (let i = 0; i < product_names.length; i++) {
+		for (let j = 0; j < product_names.length - i - 1; j++) {
+		  let price1 = parseFloat(product_names[j].split(', $')[1]);
+		  let price2 = parseFloat(product_names[j + 1].split(', $')[1]);
+		  if (price1 > price2) {
+			// swap elements
+			let temp = product_names[j];
+			product_names[j] = product_names[j + 1];
+			product_names[j + 1] = temp;
 			  }
 			}
 		  }
 	return product_names;
 }
+
 
 // Calculate the total price of items, with received parameter being a list of products
 function getTotalPrice(chosenProducts) {
