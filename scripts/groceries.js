@@ -31,7 +31,7 @@ var products = [
 	{
 		name: "Organic Gluten Free Bread",
 		vegetarian: false,
-		glutenFree: false,
+		glutenFree: true,
 		organic: true,
 		cheap: false,
 		price: 4.35
