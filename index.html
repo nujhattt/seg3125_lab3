@@ -21,7 +21,7 @@
   <h3>Client Information</h3>
   <p>Tell us a bit about you.</p>
 	Choose a Category:
-	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct','displayProduct2','displayProduct3','displayProduct4','displayProduct5','displayProduct6','displayProduct7')">
 	<option value=""></option>
 	<option value="Vegetarian">Vegetarian (My diet includes vegetables and non-meat alternatives)</option>
     <option value="Gluten-free">Gluten-free (My diet does not include gluten and I would like to see other alternatives)</option>
@@ -36,6 +36,12 @@
   <p>We preselected products based on your restrictions.</p>
 	 Choose items to buy:
 	 <div id="displayProduct"></div>
+   <div id="displayProduct2"> </div>
+   <div id="displayProduct3"></div>
+    <div id="displayProduct4"></div>
+    <div id="displayProduct5"></div>
+    <div id="displayProduct6"></div>
+    <div id="displayProduct7"></div>
 	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
 		Add selected items to cart.
 	</button>

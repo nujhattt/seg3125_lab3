@@ -9,7 +9,8 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		cheap: true,
-		price: 1.99
+		price: 1.99,
+		category: "Vegetables"
 	},
 	{
 		name: "Brocoli (Organic)",
@@ -17,7 +18,8 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		cheap: false,
-		price: 3.99
+		price: 3.99,
+		category: "Vegetables"
 	},
 		
 	{
@@ -26,7 +28,8 @@ var products = [
 		glutenFree: false,
 		organic: false,
 		cheap: true,
-		price: 2.35
+		price: 2.35,
+		category: "Bakery"
 	},
 	{
 		name: "Organic Gluten Free Bread",
@@ -34,7 +37,8 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		cheap: false,
-		price: 4.35
+		price: 4.35,
+		category: "Bakery"
 	},
 	{
 		name: "Salmon",
@@ -42,7 +46,8 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		cheap: false,
-		price: 10.00
+		price: 10.00,
+		category: "Meat/seafood"
 	},
 	{
 		name: "Salmon (Organic)",
@@ -50,7 +55,8 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		cheap: false,
-		price: 15.00
+		price: 15.00,
+		category: "Meat/seafood"
 	},
 	{
 		name: "Banana",
@@ -58,7 +64,8 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		cheap: true,
-		price: 0.99
+		price: 0.99,
+		category: "Fruits"
 	},
 	{
 		name: "Milk",
@@ -66,7 +73,8 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		cheap: true,
-		price: 2.50
+		price: 2.50,
+		category: "Dairy"
 	},
 	{
 		name: "Almond Milk",
@@ -74,7 +82,8 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		cheap: true,
-		price: 3.47
+		price: 3.47,
+		category: "Dairy"
 	},
 	{
 		name: "Mozarella Cheese",
@@ -82,7 +91,8 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		cheap: true,
-		price: 2.50
+		price: 2.50,
+		category: "Dairy"
 	},
 	{
 		name: "Avocado (Organic)",
@@ -90,7 +100,8 @@ var products = [
 		glutenFree: true,
 		organic: true,
 		cheap: false,
-		price: 6.47
+		price: 6.47,
+		category: "Fruits"
 	},
 	{
 		name: "Tofu",
@@ -98,7 +109,8 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		cheap: true,
-		price: 1.67
+		price: 1.67,
+		category: "Meat/seafood"
 	},
 	{
 		name: "Ground Meat Beef",
@@ -106,7 +118,8 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		cheap: true,
-		price: 6.97
+		price: 6.97,
+		category: "Meat/seafood"
 	},
 	{
 		name: "Boneless Skinless Chicken Breast (Organic)",
@@ -114,7 +127,8 @@ var products = [
 		glutenFree: true,
 		organic: false,
 		cheap: false,
-		price: 22.00
+		price: 22.00,
+		category: "Meat/seafood"
 	},
 ];
 	
@@ -127,19 +141,19 @@ function restrictListProducts(prods, restriction) {
 	let product_names = [];
 	for (let i=0; i<prods.length; i+=1) {
 		if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)){
-			product_names.push(prods[i].name + ', $' + prods[i].price);
+			product_names.push(prods[i].name + ', $' + prods[i].price + ', $' + prods[i].category);
 		}
 		else if ((restriction == "Gluten-free") && (prods[i].glutenFree == true)){
-			product_names.push(prods[i].name + ', $' + prods[i].price);
+			product_names.push(prods[i].name + ', $' + prods[i].price + ', $' + prods[i].category);
 		}
 		else if (restriction == "All"){
-			product_names.push(prods[i].name + ', $' + prods[i].price);
+			product_names.push(prods[i].name + ', $' + prods[i].price + ', $' + prods[i].category);
 		}
 		else if ((restriction == "Cheap") && (prods[i].cheap == true)){
-			product_names.push(prods[i].name + ', $' + prods[i].price);
+			product_names.push(prods[i].name + ', $' + prods[i].price + ', $' + prods[i].category);
 		}
 		else if ((restriction == "Health_Freak") && (prods[i].organic == true)) {
-			product_names.push(prods[i].name + ', $' + prods[i].price);
+			product_names.push(prods[i].name + ', $' + prods[i].price+ ', $' + prods[i].category);
 		}
 	}
 	for (let i = 0; i < product_names.length; i++) {
@@ -161,10 +175,8 @@ function restrictListProducts(prods, restriction) {
 // Calculate the total price of items, with received parameter being a list of products
 function getTotalPrice(chosenProducts) {
 	let totalPrice = 0;
-	for (let i=0; i<products.length; i+=1) {
-		if (chosenProducts.indexOf(products[i].name+', $'+products[i].price) > -1){
-			totalPrice += products[i].price;
-		}
+	for (let i=0; i<chosenProducts.length; i+=1) {
+		totalPrice += parseFloat(chosenProducts[i].split(', $')[1]);
 	}
 	return totalPrice;
 }
