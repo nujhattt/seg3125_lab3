@@ -21,14 +21,27 @@
   <h3>Client Information</h3>
   <p>Tell us a bit about you.</p>
 	Choose a Category:
-	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct','displayProduct2','displayProduct3','displayProduct4','displayProduct5','displayProduct6','displayProduct7')">
-	<option value=""></option>
-	<option value="Vegetarian">Vegetarian (My diet includes vegetables and non-meat alternatives)</option>
-    <option value="Gluten-free">Gluten-free (My diet does not include gluten and I would like to see other alternatives)</option>
-    <option value ="Cheap">I would like for my groceries to be affordable</option>
-    <option value ="Health_Freak">I would like to see organic products only please! </option>
-    <option value="All">I would like to see all the products please!</option>
-	</select>
+
+
+  <form>
+    <input type="radio" id="Vegetarian" name="choice" value="Vegetarian">
+    <label for="Vegetarian">Vegetarian (My diet includes vegetables and non-meat alternatives)</label>
+    <br/>
+      <input type="radio" id="Gluten-free" name="choice" value="Gluten-free">
+      <label for="Gluten-free">Gluten-free (My diet does not include gluten and I would like to see other alternatives)</label>
+      <br/>
+      <input type="radio" id="Cheap" name="choice" value="Cheap">
+      <label for="Cheap">I would like for my groceries to be affordable</label>
+      <br/>
+      <input type="radio" id="Health_Freak" name="choice" value="Health_Freak">
+      <label for="Health_Freak">I would like to see organic products only please! </label>
+      <br/>
+      <input type="radio" id="All" name="choice" value="All">
+      <label for="All">I would like to see all the products please!</label>
+
+	<button id="dietSelect" type="button" class="block" onclick="populateListProductChoices(this.id, 'displayProduct','displayProduct2','displayProduct3','displayProduct4','displayProduct5','displayProduct6','displayProduct7')">
+  Submit</button>
+</form>
 </div>
 
 <div id="Products" class="tabcontent">

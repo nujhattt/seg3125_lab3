@@ -28,6 +28,17 @@ function openInfo(evt, tabName) {
 // it makes each product name as the label for the checkbos
 
 function populateListProductChoices(slct1, slct2, slct3, slct4, slct5, slct6, slct7) {
+
+    var radiogroup = document.getElementsByName('choice');
+	var checked = '';
+    for (var i=0;i<radiogroup.length;i++) {
+        if (radiogroup[i].checked) {
+            checked = radiogroup[i].value;
+        }
+    }
+	//console.log(checked)
+
+
     var s1 = document.getElementById(slct1);
     var s2 = document.getElementById(slct2);
 	
@@ -64,7 +75,7 @@ function populateListProductChoices(slct1, slct2, slct3, slct4, slct5, slct6, sl
 	
 		
 	// obtain a reduced list of products based on restrictions
-    var optionArray = restrictListProducts(products, s1.value);
+    var optionArray = restrictListProducts(products, checked);
 
 	// for each item in the array, create a checkbox element, each containing information such as:
 	// <input type="checkbox" name="product" value="Bread">
