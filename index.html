@@ -11,33 +11,33 @@
 
 <!-- Tab links, each one with an onclick event associated with it -->
 <div class="tab">
-  <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+  <button class="tablinks" onclick="openInfo(event, 'Customer')">Customer</button>
   <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
   <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
 </div>
 
 <!-- Tab content -->
-<div id="Client" class="tabcontent">
-  <h3>Client Information</h3>
-  <p>Tell us a bit about you.</p>
-	Choose a Category:
+<div id="Customer" class="tabcontent">
+  <h3>Customer Information</h3>
+  <p>Please choose one of the options below so we can direct you according to your needs </p>
+	Choose your preference:
 
 
   <form>
     <input type="radio" id="Vegetarian" name="choice" value="Vegetarian">
-    <label for="Vegetarian">Vegetarian (My diet includes vegetables and non-meat alternatives)</label>
+    <label for="Vegetarian">Vegetarian (My diet does not include meat or fish, I would like to see non-meat alternatives)</label>
     <br/>
       <input type="radio" id="Gluten-free" name="choice" value="Gluten-free">
-      <label for="Gluten-free">Gluten-free (My diet does not include gluten and I would like to see other alternatives)</label>
+      <label for="Gluten-free">Gluten-free products (My diet does not include products containing gluten)</label>
       <br/>
       <input type="radio" id="Cheap" name="choice" value="Cheap">
-      <label for="Cheap">I would like for my groceries to be affordable</label>
+      <label for="Cheap">Affordable products (I would like for my groceries to be low-cost)</label>
       <br/>
       <input type="radio" id="Health_Freak" name="choice" value="Health_Freak">
-      <label for="Health_Freak">I would like to see organic products only please! </label>
+      <label for="Health_Freak">Organic products (I would like to see organic products only) </label>
       <br/>
       <input type="radio" id="All" name="choice" value="All">
-      <label for="All">I would like to see all the products please!</label>
+      <label for="All">No preference (I would like to see all the products)</label>
 
 	<button id="dietSelect" type="button" class="block" onclick="populateListProductChoices(this.id, 'displayProduct','displayProduct2','displayProduct3','displayProduct4','displayProduct5','displayProduct6','displayProduct7')">
   Submit</button>
@@ -46,8 +46,8 @@
 
 <div id="Products" class="tabcontent">
   <h3>Your targeted products</h3>
-  <p>We preselected products based on your restrictions.</p>
-	 Choose items to buy:
+  <p>We preselected products based on your preferences.</p>
+	 Select items to add to your cart:
 	 <div id="displayProduct"></div>
    <div id="displayProduct2"> </div>
    <div id="displayProduct3"></div>
@@ -56,13 +56,13 @@
     <div id="displayProduct6"></div>
     <div id="displayProduct7"></div>
 	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
-		Add selected items to cart.
+		Add selected items to your cart.
 	</button>
 </div>
 
 <div id="Cart" class="tabcontent">
   <h3>Cart</h3>
-  <p>Here is your cart.</p>
+  <p>Here the content of your cart.</p>
   <div id="displayCart"></div>
 </div>
 

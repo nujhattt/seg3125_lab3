@@ -4,7 +4,7 @@
 
 var products = [
 	{
-		name: "Brocoli",
+		name: "Broccoli",
 		vegetarian: true,
 		glutenFree: true,
 		organic: false,
@@ -13,7 +13,7 @@ var products = [
 		category: "Vegetables"
 	},
 	{
-		name: "Brocoli (Organic)",
+		name: "Broccoli (Organic)",
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
@@ -32,7 +32,7 @@ var products = [
 		category: "Bakery"
 	},
 	{
-		name: "Organic Gluten Free Bread",
+		name: "Gluten-Free Bread (Organic)",
 		vegetarian: false,
 		glutenFree: true,
 		organic: true,
@@ -86,7 +86,7 @@ var products = [
 		category: "Dairy"
 	},
 	{
-		name: "Mozarella Cheese",
+		name: "Mozzarella Cheese",
 		vegetarian: false,
 		glutenFree: true,
 		organic: false,
@@ -113,7 +113,7 @@ var products = [
 		category: "Meat/seafood"
 	},
 	{
-		name: "Ground Meat Beef",
+		name: "Ground Beef",
 		vegetarian: false,
 		glutenFree: true,
 		organic: false,
@@ -122,7 +122,7 @@ var products = [
 		category: "Meat/seafood"
 	},
 	{
-		name: "Boneless Skinless Chicken Breast (Organic)",
+		name: "Boneless Chicken Breast (Organic)",
 		vegetarian: false,
 		glutenFree: true,
 		organic: false,

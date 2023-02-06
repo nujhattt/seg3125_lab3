@@ -64,11 +64,11 @@ function populateListProductChoices(slct1, slct2, slct3, slct4, slct5, slct6, sl
 
 	s2_bread.appendChild(document.createTextNode("Bakery"));
 	s2_bread.appendChild(document.createElement("br")); 
-	s2_meat.appendChild(document.createTextNode("Meat,Seafood and Substitutes"));
+	s2_meat.appendChild(document.createTextNode("Meat, Seafood and Substitutes"));
 	s2_meat.appendChild(document.createElement("br")); 
 	s2_dairy.appendChild(document.createTextNode("Dairy"));
 	s2_dairy.appendChild(document.createElement("br")); 
-	s2_veg.appendChild(document.createTextNode("Veggies"));
+	s2_veg.appendChild(document.createTextNode("Vegetables"));
 	s2_veg.appendChild(document.createElement("br")); 
 	s2_fruits.appendChild(document.createTextNode("Fruits"));
 	s2_fruits.appendChild(document.createElement("br")); 
@@ -212,7 +212,7 @@ function selectedItems(){
 		
 	// add paragraph and total price
 	c.appendChild(para);
-	c.appendChild(document.createTextNode("Total Price is $" + getTotalPrice(chosenProducts)));
+	c.appendChild(document.createTextNode("Your Total Price is $" + getTotalPrice(chosenProducts)));
 		
 }
 
