@@ -3,20 +3,20 @@
 <head>
 	
 	<link href="styles/style.css" rel="stylesheet" type="text/css">
-	<link href="styles/accordion.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 
   <header>	<h1>NATS GROCERY STORE</h1>	</header>  
 
-
+<!-- Tab links, each one with an onclick event associated with it -->
+<div class="tab">
+  <button class="tablinks" onclick="openInfo(event, 'Customer')">Customer</button>
+  <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+  <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+</div>
 
 <!-- Tab content -->
-<button class="accordion" onclick="openInfo(event, 'Customer')">Customer</button>
-<div class = "panel">
-
-
 <div id="Customer" class="tabcontent">
   <h3>Customer Information</h3>
   <p>Please choose one of the options below so we can direct you according to your needs </p>
@@ -39,15 +39,11 @@
       <input type="radio" id="All" name="choice" value="All">
       <label for="All">No preference (I would like to see all the products)</label>
 
-
-</form>
 	<button id="dietSelect" type="button" class="block" onclick="populateListProductChoices(this.id, 'displayProduct','displayProduct2','displayProduct3','displayProduct4','displayProduct5','displayProduct6','displayProduct7')">
-  Submit</button>
+  Submit
+  </button>
+</form>
 </div>
-</div>
-
-<button class="accordion"  onclick="openInfo(event, 'Products')" >Products</button>
-<div class = "panel">
 
 <div id="Products" class="tabcontent">
   <h3>Your targeted products</h3>
@@ -61,19 +57,14 @@
     <div id="displayProduct6"></div>
     <div id="displayProduct7"></div>
 	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
-		Add selected items to your cart.
+		Add selected items to your cart
 	</button>
 </div>
-</div>
 
-
-<button class="accordion"  onclick="openInfo(event, 'Cart')" >Products</button>
-<div class = "panel">
 <div id="Cart" class="tabcontent">
   <h3>Cart</h3>
-  <p>Here the content of your cart.</p>
+  <p>Here is the content of your cart.</p>
   <div id="displayCart"></div>
-</div>
 </div>
 
 <script src="scripts/groceries.js"></script>
